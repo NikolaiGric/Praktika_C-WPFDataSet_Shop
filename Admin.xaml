@@ -1,0 +1,74 @@
+﻿<Window x:Class="Пятерочка.Admin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Пятерочка"
+        mc:Ignorable="d"
+        Title="Admin" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button FontSize="14" x:Name="rolee" Click="rolee_Click" Height="84">Роли</Button>
+            <Button FontSize="14" Grid.Column="1" x:Name="employers" Click="employers_Click" Height="84">Сотрудники</Button>
+            <Button FontSize="14" Grid.Column="2" x:Name="authorizeyshin" Click="authorizeyshin_Click" Height="84">Данные для авторизации</Button>
+        </Grid>
+        
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <DataGrid x:Name="AllDataGrid" SelectionChanged="AllDataGrid_SelectionChanged"  />
+            
+            <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45*"/>
+                        <RowDefinition Height="30*"/>
+                        <RowDefinition Height="15*"/>
+                    </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1.5*"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Name="TextBlock_" FontSize="16" VerticalAlignment="Center">Данные для заполнения</TextBlock>
+                    <TextBox x:Name="TextBox_Data1" Grid.Row="1" FontSize="16"/>
+                    <TextBox x:Name="TextBox_Data2" Grid.Row="2" FontSize="16"/>
+                    <PasswordBox x:Name="PasswordTbx" Grid.Row="2" VerticalAlignment="Center" 
+                         FontSize="16" 
+                         BorderBrush="{x:Null}"
+                         Background="#FFF6F6F6"
+                         materialDesign:HintAssist.Hint="Пароль"/>
+                    <TextBox x:Name="TextBox_Data3" Grid.Row="3" FontSize="16"/>
+                    <ComboBox Grid.Row="5" x:Name="ComboBox_Data1" SelectionChanged="ComboBox_Data1_SelectionChanged"/>
+                </Grid> 
+
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button FontSize="14" x:Name="Create" Click="Create_Click" Height="59">Добавить</Button>
+                    <Button FontSize="14" Grid.Column="1" x:Name="Update" Click="Update_Click" Height="59">Изменить</Button>
+                    <Button FontSize="14" Grid.Column="2" x:Name="Delete" Click="Delete_Click" Height="59">Удалить</Button>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,50 @@
+﻿<Window x:Class="Пятерочка.Users"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Пятерочка"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Users" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+    <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="Vieww" Content="Посмотреть продукты" FontSize="20" Click="Vieww_Click"/>
+            <Button Grid.Column="1" x:Name="DDesk" Content="Крутые товары" FontSize="20" Click="DDesk_Click"/>
+            <Button Grid.Column="2" x:Name="WWrite" Content="Написать отзыв" FontSize="20" Click="WWrite_Click"/>
+        </Grid>
+    <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBox materialDesign:HintAssist.Hint="Расскажите о товаре" x:Name="Description" Grid.Column="0" FontSize="15"/>
+            <ComboBox materialDesign:HintAssist.Hint="Сколько звёзд" Grid.Column="1" x:Name="Stars"/>
+            <ComboBox materialDesign:HintAssist.Hint="Название товара" Grid.Column="2" x:Name="Proda" SelectionChanged="Proda_SelectionChanged"/>
+    </Grid>
+        <DataGrid x:Name="AllDataGrid" Grid.Row="1" SelectionChanged="AllDataGrid_SelectionChanged"/>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" x:Name="Create" FontSize="20" Content="Создать" Click="Create_Click"/>
+            <Button Grid.Column="1" x:Name="Update" FontSize="20" Content="Изменить" Height="32" Margin="0,11,0,0" VerticalAlignment="Top" Click="Update_Click"/>
+            <Button Grid.Column="2" x:Name="Delete" FontSize="20" Content="Удалить" Click="Delete_Click"/>
+        </Grid>
+        
+    </Grid>
+</Window>
